@@ -1,65 +1,81 @@
 # Py2EXE Builder
 
-涓€涓熀浜?tkinter 鐨?Python 鍥惧舰鍖栨墦鍖呭伐鍏凤紝灏?Python 鑴氭湰鎵撳寘涓虹嫭绔嬪彲鎵ц鐨?EXE 鏂囦欢銆?
+一个基于 tkinter 的 Python 图形化打包工具，将 Python 脚本打包为独立可执行的 EXE 文件。
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/)
 
-## 鍔熻兘鐗规€?
-- **涓ょ鎵撳寘妯″紡**
-  - 鍗曟枃浠舵ā寮?(onefile) 鈥?鎵€鏈夊唴瀹瑰悎骞朵负涓€涓?EXE 鏂囦欢
-  - 鏂囦欢澶规ā寮?(onedir) 鈥?杈撳嚭鍖呭惈鎵€鏈変緷璧栫殑鏂囦欢澶?
-- **鎵撳寘閫夐」**
-  - 闅愯棌鎺у埗鍙扮獥鍙?鈥?鍚姩 EXE 鏃朵笉寮瑰嚭榛戣壊 CMD 绐楀彛
-  - 绠＄悊鍛樻潈闄?(UAC) 鈥?璇锋眰绠＄悊鍛樻潈闄愯繍琛?
-- **鑷畾涔夊浘鏍?*
-  - 鏀寔涓烘墦鍖呭悗鐨?EXE 璁剧疆鑷畾涔夊浘鏍?(.ico 鏍煎紡)
-  - 涓嶈缃垯浣跨敤榛樿鍥炬爣
+## 功能特性
 
-- **鐩綍绠＄悊**
-  - 鑷畾涔夎緭鍑虹洰褰?  - 鑷畾涔夌紦瀛樼洰褰曪紙鏋勫缓涓存椂鏂囦欢锛?
-- **渚濊禆绠＄悊**
-  - 涓€閿畨瑁?鏇存柊 PyInstaller
-  - 鑷姩妫€娴?PyInstaller 鐗堟湰
+- **两种打包模式**
+  - 单文件模式 (onefile) — 所有内容合并为一个 EXE 文件
+  - 文件夹模式 (onedir) — 输出包含所有依赖的文件夹
 
-- **鐢ㄦ埛浣撻獙**
-  - 娣辫壊涓婚鐣岄潰
-  - 瀹炴椂鏋勫缓鏃ュ織
-  - 鎵撳寘杩涘害鏄剧ず
-  - 鍏ㄥ眬寮傚父鎹曡幏涓庢棩蹇楄褰?
-## 蹇€熷紑濮?
-### 鏂瑰紡涓€锛氱洿鎺ヨ繍琛?EXE
+- **打包选项**
+  - 隐藏控制台窗口 — 启动 EXE 时不弹出黑色 CMD 窗口
+  - 管理员权限 (UAC) — 请求管理员权限运行
 
-1. 涓嬭浇 [Releases](https://github.com/Honest16888/py2exe_builder/releases) 涓殑 `Py2EXE_Builder.exe`
-2. 鍙屽嚮杩愯
-3. 閫夋嫨 Python 鑴氭湰锛岀偣鍑?寮€濮嬫墦鍖?
+- **自定义图标**
+  - 支持为打包后的 EXE 设置自定义图标 (.ico 格式)
+  - 不设置则使用默认图标
 
-### 鏂瑰紡浜岋細浠庢簮鐮佽繍琛?
+- **目录管理**
+  - 自定义输出目录
+  - 自定义缓存目录（构建临时文件）
+
+- **依赖管理**
+  - 一键安装/更新 PyInstaller
+  - 自动检测 PyInstaller 版本
+
+- **用户体验**
+  - 深色主题界面
+  - 实时构建日志
+  - 打包进度显示
+  - 全局异常捕获与日志记录
+
+## 快速开始
+
+### 方式一：直接运行 EXE
+
+1. 下载 [Releases](https://github.com/Honest16888/py2exe_builder/releases) 中的 `Py2EXE_Builder.exe`
+2. 双击运行
+3. 选择 Python 脚本，点击"开始打包"
+
+### 方式二：从源码运行
+
 ```bash
-# 鍏嬮殕浠撳簱
+# 克隆仓库
 git clone https://github.com/Honest16888/py2exe_builder.git
 cd py2exe_builder
 
-# 瀹夎渚濊禆
+# 安装依赖
 pip install pyinstaller
 
-# 杩愯
+# 运行
 python py2exe_builder.pyw
 ```
 
-## 浣跨敤璇存槑
+## 使用说明
 
-1. **閫夋嫨鑴氭湰** 鈥?鐐瑰嚮"娴忚"閫夋嫨瑕佹墦鍖呯殑 `.py` 鏂囦欢
-2. **閫夋嫨妯″紡** 鈥?鍗曟枃浠舵垨鏂囦欢澶规ā寮?3. **璁剧疆閫夐」** 鈥?闅愯棌鎺у埗鍙般€佺鐞嗗憳鏉冮檺绛?4. **璁剧疆鍥炬爣** 鈥?鍙€夛紝涓?EXE 璁剧疆鑷畾涔夊浘鏍?5. **璁剧疆鐩綍** 鈥?杈撳嚭鐩綍鍜岀紦瀛樼洰褰?6. **瀹夎渚濊禆** 鈥?棣栨浣跨敤鐐瑰嚮"瀹夎/鏇存柊 PyInstaller"
-7. **寮€濮嬫墦鍖?* 鈥?鐐瑰嚮"寮€濮嬫墦鍖?鎸夐挳
+1. **选择脚本** — 点击"浏览"选择要打包的 `.py` 文件
+2. **选择模式** — 单文件或文件夹模式
+3. **设置选项** — 隐藏控制台、管理员权限等
+4. **设置图标** — 可选，为 EXE 设置自定义图标
+5. **设置目录** — 输出目录和缓存目录
+6. **安装依赖** — 首次使用点击"安装/更新 PyInstaller"
+7. **开始打包** — 点击"开始打包"按钮
 
-## 绯荤粺瑕佹眰
+## 系统要求
 
 - Windows 10/11
-- Python 3.9 鎴栨洿楂樼増鏈?- PyInstaller锛堝伐鍏蜂細鑷姩妫€娴嬪拰瀹夎锛?
-## 鏋勫缓 EXE
+- Python 3.9 或更高版本
+- PyInstaller（工具会自动检测和安装）
 
-濡傛灉浣犳兂灏嗘湰宸ュ叿涔熸墦鍖呬负 EXE锛?
+## 构建 EXE
+
+如果你想将本工具也打包为 EXE：
+
 ```bash
 pip install pyinstaller
 
@@ -69,27 +85,35 @@ pyinstaller --noconfirm --clean --onefile --windowed ^
   py2exe_builder.pyw
 ```
 
-鐢熸垚鐨?EXE 鏂囦欢浣嶄簬 `dist/` 鐩綍銆?
-## 椤圭洰缁撴瀯
+生成的 EXE 文件位于 `dist/` 目录。
+
+## 项目结构
 
 ```
 py2exe_builder/
-鈹溾攢鈹€ py2exe_builder.pyw    # 涓荤▼搴忔簮鐮?鈹溾攢鈹€ app_icon.ico          # 搴旂敤鍥炬爣
-鈹溾攢鈹€ Py2EXE_Builder.exe    # 鎵撳寘濂界殑鍙墽琛屾枃浠?鈹溾攢鈹€ LICENSE               # MIT 璁稿彲璇?鈹溾攢鈹€ README.md             # 椤圭洰璇存槑
-鈹溾攢鈹€ CONTRIBUTING.md       # 璐＄尞鎸囧崡
-鈹斺攢鈹€ .gitignore            # Git 蹇界暐鏂囦欢
+├── py2exe_builder.pyw    # 主程序源码
+├── app_icon.ico          # 应用图标
+├── Py2EXE_Builder.exe    # 打包好的可执行文件
+├── LICENSE               # MIT 许可证
+├── README.md             # 项目说明
+├── CONTRIBUTING.md       # 贡献指南
+└── .gitignore            # Git 忽略文件
 ```
 
-## 璐＄尞
+## 贡献
 
-娆㈣繋璐＄尞浠ｇ爜锛佽闃呰 [CONTRIBUTING.md](CONTRIBUTING.md) 浜嗚В璇︽儏銆?
-## 璁稿彲璇?
-鏈」鐩噰鐢?[MIT 璁稿彲璇乚(LICENSE)銆?
-## 鑷磋阿
+欢迎贡献代码！请阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详情。
 
-- [PyInstaller](https://pyinstaller.org/) 鈥?Python 鎵撳寘宸ュ叿
-- [tkinter](https://docs.python.org/3/library/tkinter.html) 鈥?Python GUI 搴?
-## 鑱旂郴鏂瑰紡
+## 许可证
+
+本项目采用 [MIT 许可证](LICENSE)。
+
+## 致谢
+
+- [PyInstaller](https://pyinstaller.org/) — Python 打包工具
+- [tkinter](https://docs.python.org/3/library/tkinter.html) — Python GUI 库
+
+## 联系方式
 
 - Issues: [GitHub Issues](https://github.com/Honest16888/py2exe_builder/issues)
 - Email: 3167504185@qq.com
